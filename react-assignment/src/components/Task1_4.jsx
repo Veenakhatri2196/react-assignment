@@ -14,9 +14,31 @@ function Task1_4() {
       <br />
       <br />
 
-      <button onClick={() => setIsDisabled(!isDisabled)}>
-        {isDisabled ? "Enable Submit Button" : "Disable Submit Button"}
+      <button onClick={() => setIsDisabled(true)}>
+        Disable Submit
       </button>
+
+      <button
+        onClick={() => setIsDisabled(false)}
+        style={{ marginLeft: "10px" }}
+      >
+        Enable Submit
+      </button>
+
+      <br />
+      <br />
+
+      <p
+        style={{
+          color: isDisabled ? "red" : "green",
+          fontWeight: "bold",
+          fontSize: "18px",
+        }}
+      >
+        {isDisabled
+          ? "🔴 Button is Disabled"
+          : "🟢 Button is Enabled"}
+      </p>
     </div>
   );
 }
