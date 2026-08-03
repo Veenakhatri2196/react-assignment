@@ -228,3 +228,229 @@ li {
     box-sizing: border-box;
   }
 }
+
+/* ===========================
+   Task 5 - Drag & Drop Kanban
+=========================== */
+
+.kanban-container {
+  width: 100%;
+}
+
+
+.kanban-title {
+  text-align: center;
+  color: #2563eb;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+
+/* Main Board */
+
+.kanban-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+
+/* Column Box */
+
+.kanban-column {
+  background: #ffffff;
+  border-radius: 15px;
+  min-height: 350px;
+  overflow: hidden;
+
+  border: 2px solid #e5e7eb;
+
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+
+  transition: 0.3s ease;
+}
+
+
+.kanban-column:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(59,130,246,0.20);
+}
+
+
+/* Unplanned Full Width */
+
+.unplanned-column {
+  grid-column: 1 / -1;
+}
+
+
+
+/* Header */
+
+.kanban-header {
+
+  background: #3b82f6;
+
+  color: white;
+
+  padding: 15px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  font-size: 18px;
+
+  font-weight: bold;
+
+}
+
+
+
+/* Count Circle */
+
+.task-count {
+
+  background: white;
+
+  color: #2563eb;
+
+  width: 30px;
+
+  height: 30px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+}
+
+
+
+/* Task Area */
+
+.kanban-body {
+
+  padding: 15px;
+
+  min-height: 250px;
+
+}
+
+
+
+/* Individual Task Card */
+
+.task-item {
+
+  background: #f8fafc;
+
+  border: 1px solid #dbeafe;
+
+  border-radius: 10px;
+
+  padding: 12px;
+
+  margin-bottom: 12px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  cursor: grab;
+
+  font-size: 15px;
+
+  transition: 0.3s ease;
+
+}
+
+
+
+.task-item:hover {
+
+  background: #eff6ff;
+
+  transform: translateX(5px);
+
+}
+
+
+
+/* Icon */
+
+.task-icon {
+
+  font-size: 18px;
+
+}
+
+
+
+/* Empty Drop Box */
+
+.empty-column {
+
+  border: 2px dashed #cbd5e1;
+
+  border-radius: 10px;
+
+  padding: 25px 10px;
+
+  text-align: center;
+
+  color: #94a3b8;
+
+}
+
+
+
+/* Drop Highlight */
+
+.active-drop {
+
+  border: 2px dashed #2563eb;
+
+  background: #eff6ff;
+
+}
+
+
+
+/* Responsive */
+
+@media(max-width:1000px){
+
+  .kanban-grid {
+
+    grid-template-columns: repeat(2,1fr);
+
+  }
+
+}
+
+
+@media(max-width:768px){
+
+  .kanban-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .unplanned-column {
+
+    grid-column: auto;
+
+  }
+
+}

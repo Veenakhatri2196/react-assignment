@@ -11,6 +11,7 @@ import Task1_7 from "./components/Task1_7";
 import Counter from "./components/Counter";
 import SearchFilter from "./components/SearchFilter";
 import Task4 from "./components/Task4";
+import Task5 from "./components/Task5";
 
 function App() {
   const [selectedTask, setSelectedTask] = useState("");
@@ -26,6 +27,7 @@ function App() {
     { id: "counter", title: "Counter App" },
     { id: "search", title: "Search Filter" },
     { id: "datagrid", title: "Data Grid" },
+    { id: "dragdrop", title: "Drag & Drop" },
   ];
 
   const renderComponent = () => {
@@ -59,6 +61,9 @@ function App() {
 
       case "datagrid":
         return <Task4 />;
+
+      case "dragdrop":
+        return <Task5 />;
 
       default:
         return (
