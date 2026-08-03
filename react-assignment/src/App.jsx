@@ -10,6 +10,7 @@ import Task1_6 from "./components/Task1_6";
 import Task1_7 from "./components/Task1_7";
 import Counter from "./components/Counter";
 import SearchFilter from "./components/SearchFilter";
+import Task4 from "./components/Task4";
 
 function App() {
   const [selectedTask, setSelectedTask] = useState("");
@@ -24,6 +25,7 @@ function App() {
     { id: "task7", title: "Task 1.7" },
     { id: "counter", title: "Counter App" },
     { id: "search", title: "Search Filter" },
+    { id: "datagrid", title: "Data Grid" },
   ];
 
   const renderComponent = () => {
@@ -55,6 +57,9 @@ function App() {
       case "search":
         return <SearchFilter />;
 
+      case "datagrid":
+        return <Task4 />;
+
       default:
         return (
           <div className="welcome-card">
@@ -76,7 +81,6 @@ function App() {
 
   return (
     <div className="app">
-
       <header className="header">
         <h1>React Assignment</h1>
         <p>React Basics & Mini Projects</p>
@@ -127,7 +131,6 @@ function App() {
       <footer className="footer">
         <p>React Assignment © 2026 | Developed by Veena Khatri</p>
       </footer>
-
     </div>
   );
 }
